@@ -1,0 +1,9 @@
+@import "tailwindcss";
+body{
+  background-color: black;
+  color: white;
+}
+.mygreycolor{
+  background-color: #181818;
+  
+}
