@@ -20,14 +20,18 @@ const Card = () => {
 
 
     const getdata = async () => {
-        try{
-        let response = await fetch(`https://newsapi.org/v2/everything?q=apple&from=2025-08-04&to=2025-08-04&sortBy=popularity&apiKey=${process.env.NEXT_PUBLIC_NEWS_API}`)
-        let data = await response.json()
-        
-        setjsondata(data.articles)
+        try {
+            // let response = await fetch(`https://newsapi.org/v2/everything?q=apple&from=2025-08-04&to=2025-08-04&sortBy=popularity&apiKey=${process.env.NEXT_PUBLIC_NEWS_API}`)
+            let response = await fetch(`https://saurav.tech/NewsAPI/top-headlines/category/health/in.json`)
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            let data = await response.json()
+
+            setjsondata(data.articles)
         }
-        catch(err){
-            console.log(err,+ "Something Went Wrong ...")
+        catch (err) {
+            console.log(err, + "Something Went Wrong ...")
         }
     }
 
@@ -52,11 +56,11 @@ const Card = () => {
             };
 
             return <div key={index}>
-                <div  className='flex items-center justify-between'>
+                <div className='flex items-center justify-between'>
 
                     <div className="mininav flex m-2">
                         <div className="rounded-full  overflow-hidden  relative border">
-                            
+
                             <img
                                 src={items.urlToImage || '/assets/icons/default_user.png'}
                                 alt="logo"
@@ -69,7 +73,7 @@ const Card = () => {
                             />
                         </div>
                         <p className='p-3 font-bold cursor-pointer '>
-                           <span className='hover:underline'> {getDisplayName(items.author)} </span>
+                            <span className='hover:underline'> {getDisplayName(items.author)} </span>
                             <span className='text-gray-500 font-normal p-4'>
                                 @{getDisplayName(items.author)}
                             </span>
@@ -94,7 +98,7 @@ const Card = () => {
                     <div className='flex items-center space-x-4 md:space-x-15 text-xl'>
                         <div className='flex items-center space-x-1 group cursor-pointer'>
                             <BiMessageRounded className='group-hover:text-blue-500 transition-colors' />
-                            <span className='text-sm text-gray-500 group-hover:text-blue-500 transition-colors'>{`${Math.floor(Math.random() * 2+1)}k+`}</span>
+                            <span className='text-sm text-gray-500 group-hover:text-blue-500 transition-colors'>{`${Math.floor(Math.random() * 2 + 1)}k+`}</span>
                         </div>
                         <div className='flex items-center space-x-1 group cursor-pointer'>
                             <BiRepost className='group-hover:text-green-500 transition-colors' />
@@ -127,8 +131,8 @@ const Card = () => {
                     </div> */}
                 </div>
                 <div className='border-1 mt-3 mb-2 w-full border-neutral-700 bg-gray-600'></div>
-                </div>
-            
+            </div>
+
         })
 
     )
