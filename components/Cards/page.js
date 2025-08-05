@@ -1,8 +1,9 @@
 'use client'
+
 import React, { useEffect, useState } from 'react'
+/* eslint-disable @next/next/no-img-element */
 
 import { IoPlanetOutline } from "react-icons/io5";
-import { BsThreeDots } from "react-icons/bs";
 import { BiRepost } from "react-icons/bi";
 import Link from 'next/link';
 import { CiHeart } from "react-icons/ci";
@@ -10,6 +11,7 @@ import { IoStatsChart } from "react-icons/io5";
 import { BiMessageRounded } from "react-icons/bi";
 import { CiBookmark } from "react-icons/ci";
 import { FiShare } from "react-icons/fi";
+import { BsThreeDots } from "react-icons/bs";
 
 
 
@@ -54,6 +56,7 @@ const Card = () => {
 
                     <div className="mininav flex m-2">
                         <div className="rounded-full  overflow-hidden  relative border">
+                            
                             <img
                                 src={items.urlToImage || '/assets/icons/default_user.png'}
                                 alt="logo"

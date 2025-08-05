@@ -20,7 +20,7 @@ const Right = () => {
         </div>
         <div className='mt-4 ml-4 p-2 rounded-xl w-80 h-110 border-1  border-gray-400'>
           <div className="content text-xl font-bold">
-            <p className='px-2'>What's happening</p>
+            <p className='px-2'>What&apos;s happening</p>
             <TrendingCard/>
           </div>
         </div>
